@@ -1,0 +1,10 @@
+{
+ "mes": "2026-03",
+ "pedidos_por_dia": {},
+ "archivos_procesados": [],
+ "modalidades": {
+   "DOMICILIOS": 0,
+   "DRIVE": 0,
+   "SUCURSAL": 0
+ }
+}
