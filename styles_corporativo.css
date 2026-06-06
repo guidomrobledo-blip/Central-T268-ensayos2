@@ -1,0 +1,728 @@
+/* =====================================================
+   PANEL OPERACIONES CARREFOUR - ESTILO CORPORATIVO
+   Sistema de Gestión Logística
+   Inspirado en: SGL, SAP Fiori, Oracle Logistics, TMS
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* ===== VARIABLES CSS ===== */
+:root {
+    /* Colores Base */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8F9FA;
+    --bg-tertiary: #F1F3F5;
+    --bg-header: #1A3A4A;
+    
+    /* Texto */
+    --text-primary: #212529;
+    --text-secondary: #495057;
+    --text-muted: #6C757D;
+    --text-light: #ADB5BD;
+    --text-white: #FFFFFF;
+    
+    /* Bordes */
+    --border-light: #DEE2E6;
+    --border-medium: #CED4DA;
+    --border-dark: #ADB5BD;
+    
+    /* Acentos - Azul Carrefour Corporativo */
+    --accent-primary: #0D6EFD;
+    --accent-primary-hover: #0B5ED7;
+    --accent-secondary: #17A2B8;
+    
+    /* Estados */
+    --success: #198754;
+    --success-bg: #D1E7DD;
+    --success-border: #BADBCC;
+    --warning: #FFC107;
+    --warning-bg: #FFF3CD;
+    --warning-border: #FFECB5;
+    --danger: #DC3545;
+    --danger-bg: #F8D7DA;
+    --danger-border: #F5C2C7;
+    --info: #0DCAF0;
+    --info-bg: #CFF4FC;
+    --info-border: #B6EFFB;
+    
+    /* Sombras */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    /* Espaciado */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+}
+
+/* ===== RESET STREAMLIT DEFAULTS ===== */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+/* ===== MAIN BACKGROUND ===== */
+.stApp {
+    background: var(--bg-secondary) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* ===== FULL WIDTH LAYOUT ===== */
+.block-container {
+    padding: 1rem 1.5rem !important;
+    max-width: 100% !important;
+    background: var(--bg-secondary);
+}
+
+@media (min-width: 1400px) {
+    .block-container {
+        padding: 1rem 2.5rem !important;
+    }
+}
+
+/* ===== HEADER CORPORATIVO ===== */
+.header-container {
+    background: linear-gradient(135deg, #1A3A4A 0%, #234E5C 100%);
+    border-radius: 0;
+    padding: 12px 24px;
+    margin: -1rem -1.5rem 20px -1.5rem;
+    border: none;
+    border-bottom: 3px solid var(--accent-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 1400px) {
+    .header-container {
+        margin: -1rem -2.5rem 20px -2.5rem;
+        padding: 12px 40px;
+    }
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-logo {
+    height: 40px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.title-main {
+    color: var(--text-white) !important;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin: 0;
+    letter-spacing: 0.3px;
+    text-shadow: none;
+}
+
+.title-main::after {
+    display: none;
+}
+
+.title-main,
+.title-main span {
+    color: var(--text-white) !important;
+}
+
+.subtitle-main {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8em;
+    margin: 0;
+    font-weight: 400;
+}
+
+.header-divider {
+    display: none;
+}
+
+/* ===== CARDS CORPORATIVAS ===== */
+.glass-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    border-top: none;
+}
+
+.card-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.card-icon {
+    font-size: 1em;
+    opacity: 0.8;
+}
+
+/* ===== BOTONES CORPORATIVOS ===== */
+div.stButton > button {
+    background: var(--bg-primary) !important;
+    border-radius: var(--radius-sm) !important;
+    height: 38px !important;
+    font-weight: 500 !important;
+    font-size: 0.8em !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-sm) !important;
+    transition: all 0.15s ease !important;
+    padding: 0 16px !important;
+}
+
+div.stButton > button:hover {
+    background: var(--bg-tertiary) !important;
+    border-color: var(--border-dark) !important;
+    box-shadow: var(--shadow-md) !important;
+    transform: none !important;
+}
+
+div.stButton > button:active {
+    background: var(--bg-secondary) !important;
+    transform: none !important;
+}
+
+div.stButton > button:disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+}
+
+/* Link Button (Planilla MEC) */
+.stLinkButton > a {
+    background: var(--bg-primary) !important;
+    border-radius: var(--radius-sm) !important;
+    height: 38px !important;
+    font-weight: 500 !important;
+    font-size: 0.8em !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: var(--shadow-sm) !important;
+    transition: all 0.15s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+}
+
+.stLinkButton > a:hover {
+    background: var(--bg-tertiary) !important;
+    border-color: var(--border-dark) !important;
+    text-decoration: none !important;
+}
+
+/* ===== FILE UPLOADER CORPORATIVO ===== */
+[data-testid="stFileUploader"] {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    border: 1px dashed var(--border-medium);
+    transition: all 0.15s ease;
+}
+
+[data-testid="stFileUploader"]:hover {
+    border-color: var(--accent-primary);
+    background: var(--bg-tertiary);
+}
+
+[data-testid="stFileUploader"] label {
+    color: var(--text-secondary) !important;
+    font-size: 0.85em !important;
+}
+
+[data-testid="stFileUploader"] p {
+    color: var(--text-muted) !important;
+}
+
+[data-testid="stFileUploader"] span {
+    color: var(--text-primary) !important;
+    font-weight: 500;
+}
+
+[data-testid="stFileUploader"] small {
+    color: var(--text-muted) !important;
+}
+
+[data-testid="stFileUploaderDropzone"] {
+    background: var(--bg-secondary) !important;
+    border: none !important;
+}
+
+[data-testid="stFileUploaderDropzone"] svg {
+    color: var(--accent-primary) !important;
+    opacity: 0.6;
+}
+
+[data-testid="stFileUploaderDropzone"] > div {
+    color: var(--text-secondary) !important;
+}
+
+[data-testid="stFileUploaderDropzone"] small {
+    color: var(--text-muted) !important;
+}
+
+[data-testid="stFileUploader"] button {
+    background: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-medium) !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+[data-testid="stFileUploader"] button:hover {
+    background: var(--bg-tertiary) !important;
+    border-color: var(--border-dark) !important;
+}
+
+/* ===== TEXT INPUTS CORPORATIVOS ===== */
+.stTextInput input,
+.stNumberInput input {
+    background: var(--bg-primary) !important;
+    border: 1px solid var(--border-medium) !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.9em !important;
+    padding: 8px 12px !important;
+    height: 36px !important;
+}
+
+.stTextInput input:focus,
+.stNumberInput input:focus {
+    border-color: var(--accent-primary) !important;
+    box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15) !important;
+    outline: none !important;
+}
+
+.stTextInput input::placeholder,
+.stNumberInput input::placeholder {
+    color: var(--text-light) !important;
+}
+
+.stTextInput label,
+.stNumberInput label {
+    color: var(--text-secondary) !important;
+    font-weight: 500 !important;
+    font-size: 0.85em !important;
+}
+
+/* ===== SELECT BOX CORPORATIVO ===== */
+.stSelectbox > div > div {
+    background: var(--bg-primary) !important;
+    border: 1px solid var(--border-medium) !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--text-primary) !important;
+    font-size: 0.9em !important;
+}
+
+.stSelectbox > div > div:hover {
+    border-color: var(--border-dark) !important;
+}
+
+.stSelectbox label {
+    color: var(--text-secondary) !important;
+    font-weight: 500 !important;
+    font-size: 0.85em !important;
+}
+
+/* Dropdown menu */
+[data-baseweb="popover"] {
+    background: var(--bg-primary) !important;
+    border: 1px solid var(--border-medium) !important;
+    border-radius: var(--radius-sm) !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+[data-baseweb="menu"] {
+    background: var(--bg-primary) !important;
+}
+
+[data-baseweb="menu"] li {
+    color: var(--text-primary) !important;
+}
+
+[data-baseweb="menu"] li:hover {
+    background: var(--bg-secondary) !important;
+}
+
+/* ===== TEXT AREA CORPORATIVO ===== */
+.stTextArea textarea {
+    background: var(--bg-primary) !important;
+    border: 1px solid var(--border-medium) !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.9em !important;
+    padding: 10px 12px !important;
+}
+
+.stTextArea textarea:focus {
+    border-color: var(--accent-primary) !important;
+    box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15) !important;
+}
+
+.stTextArea textarea::placeholder {
+    color: var(--text-light) !important;
+}
+
+.stTextArea label {
+    color: var(--text-secondary) !important;
+    font-weight: 500 !important;
+    font-size: 0.85em !important;
+}
+
+/* ===== METRICS CORPORATIVOS ===== */
+.metric-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    text-align: center;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.metric-value {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 2em;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.metric-value-gold {
+    color: var(--accent-primary);
+}
+
+.metric-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.75em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 6px;
+}
+
+.reset-btn {
+    background: transparent;
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    padding: 4px 8px;
+    font-size: 0.75em;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    margin-left: 8px;
+}
+
+.reset-btn:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+/* ===== EXPANDER CORPORATIVO ===== */
+.streamlit-expanderHeader {
+    background: var(--bg-tertiary) !important;
+    border: 1px solid var(--border-light) !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--text-primary) !important;
+    font-weight: 500 !important;
+    font-size: 0.9em !important;
+    padding: 10px 14px !important;
+}
+
+.streamlit-expanderHeader:hover {
+    background: var(--bg-secondary) !important;
+    border-color: var(--border-medium) !important;
+}
+
+.streamlit-expanderContent {
+    background: var(--bg-primary) !important;
+    border: 1px solid var(--border-light) !important;
+    border-top: none !important;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
+    padding: 12px !important;
+}
+
+/* ===== DATAFRAME / TABLAS CORPORATIVAS ===== */
+[data-testid="stDataFrame"] {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+[data-testid="stDataFrame"] table {
+    font-size: 0.85em !important;
+}
+
+[data-testid="stDataFrame"] th {
+    background: var(--bg-tertiary) !important;
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    font-size: 0.75em !important;
+    letter-spacing: 0.3px !important;
+    padding: 10px 12px !important;
+    border-bottom: 2px solid var(--border-medium) !important;
+}
+
+[data-testid="stDataFrame"] td {
+    color: var(--text-secondary) !important;
+    padding: 8px 12px !important;
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+[data-testid="stDataFrame"] tr:hover td {
+    background: var(--bg-secondary) !important;
+}
+
+/* ===== ALERTS CORPORATIVOS ===== */
+.stSuccess {
+    background: var(--success-bg) !important;
+    border: 1px solid var(--success-border) !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--success) !important;
+    border-left: 4px solid var(--success) !important;
+}
+
+.stInfo {
+    background: var(--info-bg) !important;
+    border: 1px solid var(--info-border) !important;
+    border-radius: var(--radius-sm) !important;
+    color: #055160 !important;
+    border-left: 4px solid var(--info) !important;
+}
+
+.stWarning {
+    background: var(--warning-bg) !important;
+    border: 1px solid var(--warning-border) !important;
+    border-radius: var(--radius-sm) !important;
+    color: #664D03 !important;
+    border-left: 4px solid var(--warning) !important;
+}
+
+.stError {
+    background: var(--danger-bg) !important;
+    border: 1px solid var(--danger-border) !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--danger) !important;
+    border-left: 4px solid var(--danger) !important;
+}
+
+/* ===== DOWNLOAD BUTTON CORPORATIVO ===== */
+.stDownloadButton > button {
+    background: var(--accent-primary) !important;
+    border: none !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--text-white) !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    font-size: 0.8em !important;
+    box-shadow: var(--shadow-sm) !important;
+    transition: all 0.15s ease !important;
+}
+
+.stDownloadButton > button:hover {
+    background: var(--accent-primary-hover) !important;
+    transform: none !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* ===== SPINNER CORPORATIVO ===== */
+.stSpinner > div {
+    border-color: var(--accent-primary) transparent transparent transparent !important;
+}
+
+/* ===== SCROLLBAR CORPORATIVO ===== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--border-dark);
+}
+
+/* ===== DONUT CHART LEGEND CORPORATIVO ===== */
+.donut-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8em;
+    color: var(--text-secondary);
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/* ===== SUBHEADER CORPORATIVO ===== */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary) !important;
+}
+
+.stSubheader {
+    color: var(--text-primary) !important;
+    font-weight: 500 !important;
+    font-size: 0.95em !important;
+    margin-bottom: 12px !important;
+}
+
+/* ===== TABS CORPORATIVOS ===== */
+.stTabs [data-baseweb="tab-list"] {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    padding: 4px;
+    gap: 4px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: transparent !important;
+    color: var(--text-secondary) !important;
+    border-radius: var(--radius-sm) !important;
+    font-weight: 500 !important;
+    font-size: 0.85em !important;
+    padding: 8px 16px !important;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    background: var(--bg-secondary) !important;
+}
+
+.stTabs [aria-selected="true"] {
+    background: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+/* ===== CHECKBOX CORPORATIVO ===== */
+.stCheckbox label {
+    color: var(--text-secondary) !important;
+    font-size: 0.9em !important;
+}
+
+.stCheckbox label span {
+    color: var(--text-secondary) !important;
+}
+
+/* ===== RADIO CORPORATIVO ===== */
+.stRadio label {
+    color: var(--text-secondary) !important;
+    font-size: 0.9em !important;
+}
+
+/* ===== FOOTER CORPORATIVO ===== */
+.footer {
+    text-align: center;
+    padding: 16px;
+    color: var(--text-muted);
+    font-size: 0.75em;
+    letter-spacing: 0.5px;
+    border-top: 1px solid var(--border-light);
+    margin-top: 24px;
+    background: var(--bg-primary);
+}
+
+/* ===== LOADING SCREEN - SIMPLIFICADO ===== */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-header);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeOut 0.3s ease-out 0.8s forwards;
+}
+
+.loading-logo {
+    animation: none;
+    filter: brightness(0) invert(1);
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+}
+
+/* ===== DIVIDERS ===== */
+hr {
+    border: none;
+    border-top: 1px solid var(--border-light);
+    margin: 16px 0;
+}
+
+/* ===== MARKDOWN TEXT ===== */
+.stMarkdown {
+    color: var(--text-secondary);
+}
+
+.stMarkdown p {
+    color: var(--text-secondary);
+}
+
+.stMarkdown strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* ===== COLUMN GAPS ===== */
+[data-testid="column"] {
+    padding: 0 8px;
+}
+
+/* ===== SPECIFIC BUTTON SIZES ===== */
+div.stButton > button {
+    height: 38px !important;
+    margin-top: 0 !important;
+    font-size: 0.8em !important;
+}
+</content>
+<parameter name="taskNameActive">Creating corporate CSS
